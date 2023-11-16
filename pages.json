@@ -1,6 +1,21 @@
 {
 	"pages": [
 		{
+		    "path" : "pages/webview/index",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "webview",
+		        "enablePullDownRefresh": false,
+				"navigationStyle": "custom"
+		    }
+		 },
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "蓝牙打印测试"
+			}
+		},
+		{
 		    "path" : "pages/setting/index",
 		    "style" :                                                                                    
 		    {
@@ -8,12 +23,6 @@
 		        "enablePullDownRefresh": false
 		    }
 		    
-		},
-		{
-			"path": "pages/index/index",
-			"style": {
-				"navigationBarTitleText": "蓝牙打印测试"
-			}
 		}
 		
     ],

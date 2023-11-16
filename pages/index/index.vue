@@ -16,6 +16,9 @@
 				<navigator url="/pages/setting/index" hover-class="navigator-hover">
 					<button type="default">跳转到设置界面</button>
 				</navigator>
+				<navigator url="/pages/webview/index" hover-class="navigator-hover">
+					<button type="default">跳转到webview界面</button>
+				</navigator>
 			</view>
 		</view>
 	</view>
@@ -23,6 +26,7 @@
 </template>
 
 <script>
+	import h5View from '../webview/index.vue'
 	// 引入打印插件的打印方法
 	import {
 		print
@@ -30,6 +34,7 @@
 
 	export default {
 		name: 'PrintDemo',
+		components:{ h5View },
 		data() {
 			return {
 				// 业务数据
