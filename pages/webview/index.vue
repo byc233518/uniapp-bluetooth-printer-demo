@@ -16,7 +16,8 @@
 		data() {
 			return {
 				// H5 应用的地址, 替换成自己的H5的地址
-				src: "http://192.168.101.110:8080/#/pages/index/index",
+				src: "http://192.168.2.56:8080/#/pages/index/index",
+				// src: "https://www.baidu.com",
 			}
 		},
 		methods: {

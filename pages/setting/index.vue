@@ -29,6 +29,7 @@
 </template>
 
 <script>
+
 	import {
 		printTest
 	} from '@/libs/print.js'
@@ -106,6 +107,29 @@
 			},
 			//开始搜寻附近的蓝牙外围设备
 			searchDevices(address) {
+				uni.getSystemInfo({
+					success:function(data){  
+						var permissionArr;  
+						if(data.osAndroidAPILevel<31){  
+							permissionArr = ["android.permission.ACCESS_FINE_LOCATION"];  
+						}else{  
+							permissionArr = ["android.permission.ACCESS_FINE_LOCATION","android.permission.BLUETOOTH_SCAN","android.permission.BLUETOOTH_CONNECT"];//,"android.permission.BLUETOOTH_ADVERTISE" 发现蓝牙权限暂时不需要  
+						}  
+						plus.android.requestPermissions(permissionArr);// 内部封装了plus.android.requestPermissions  
+					},
+					fail:function(){  
+						uni.showModal({  
+							title:"信息获取失败",  
+							content: "信息获取失败，请返回主页面",  
+							confirmText:"返回",  
+							success:function(data){  
+								uni.navigateBack({  
+									delta:0  
+								})  
+							}  
+						})  
+					}  
+				})
 				var that = this
 				//注册类  
 				var main = plus.android.runtimeMainActivity();

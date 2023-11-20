@@ -67,7 +67,14 @@
 						// 标签内容
 						// 文本 {command} {font} {size} {x} {y} {data}
 						str += "TEXT 24 0 30 50 " + data.name +"\r\n";
-						// 二维码 {command} {type} {x} {y} [M n] [U n] {data}
+						
+						/*
+						 * 二维码 
+						 * {command} {type} {x} {y} [M n] [U n] {data}
+						 * 
+						 * 
+						 * */
+						// 
 						str += "B QR 380 20 M 2 U 5" + '\r\n';
 						str += "MA," + data.code +"\r\n";
 						str += "ENDQR" + '\r\n';
@@ -79,6 +86,19 @@
 						str += "TEXT 24 0 320 200 日期:" + data.date +"\r\n";
 						str += "TEXT 24 0 30 250 装箱人:" + data.operator +"\r\n";
 						str += "TEXT 24 0 320 250 确认人:" + data.auditor +"\r\n";
+						
+						
+						/*
+						 * 线框
+						 * {command} {x0} {y0} {x1} {y1} {width}
+						 * {command}：BOX 
+						 * {x0}：左上角的横坐标 
+						 * {y0}：左上角的纵坐标 
+						 * {x1}：右下角的横坐标 
+						 * {y1}：右下角的纵坐标 
+						 * {width}：矩形框线条的单位宽度
+						*/
+						str += "BOX 20 90 300 140 2" + "\r\n";
 							
 						// 标签结束
 						str += "GAP-SENSE" + '\r\n';
